@@ -21,25 +21,29 @@ const Modal = ({ onClose }) => {
     e.preventDefault();
     const { username, email, phone, dob } = formData;
 
-    if (!username || !email || !phone || !dob) {
+        if (email && !email.includes('@')) {
+      alert('Invalid email');
+      return;
+    }else{
       alert('Please fill out all fields.');
       return;
     }
 
-    if (!email.includes('@')) {
-      alert('Invalid email');
-      return;
-    }
-
-    if (!/^\d{10}$/.test(phone)) {
+    if (phone && !/^\d{10}$/.test(phone)) {
       alert('Invalid phone number');
+      return;
+    }else{
+      alert('Please fill out all fields.');
       return;
     }
 
     const selectedDate = new Date(dob);
     const currentDate = new Date();
-    if (selectedDate > currentDate) {
+    if (dob && selectedDate > currentDate) {
       alert('Invalid date of birth');
+      return;
+    }else{
+      alert('Please fill out all fields.');
       return;
     }
 
