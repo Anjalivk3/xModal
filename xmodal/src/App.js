@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import XModal from './components/XModal';
+import Modal from './Component/Modal';
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -9,8 +9,9 @@ const App = () => {
 
   return (
     <div className="app">
+      <h1>User Details Modal</h1>
       <button onClick={openModal}>Open Form</button>
-      {isModalOpen && <XModal onClose={closeModal} />}
+      {isModalOpen && <Modal onClose={closeModal} />}
     </div>
   );
 };

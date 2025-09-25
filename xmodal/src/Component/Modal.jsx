@@ -61,23 +61,21 @@ const Modal = ({ onClose }) => {
   return (
     <div className="modal">
       <div className="modal-content" ref={modalRef}>
+        <h2>Fill Details</h2>
         <form onSubmit={handleSubmit}>
-          <div>
+          
             <label htmlFor="username">Username:</label>
             <input id="username" value={formData.username} onChange={handleChange} />
-          </div>
-          <div>
-            <label htmlFor="email">Email:</label>
+          
+            <label htmlFor="email">Email Address:</label>
             <input id="email" value={formData.email} onChange={handleChange} />
-          </div>
-          <div>
+          
+          
             <label htmlFor="phone">Phone Number:</label>
             <input id="phone" value={formData.phone} onChange={handleChange} />
-          </div>
-          <div>
+          
             <label htmlFor="dob">Date of Birth:</label>
-            <input id="dob" type="date" value={formData.dob} onChange={handleChange} />
-          </div>
+            <input id="dob" type="date" value={formData.dob} onChange={handleChange} />          
           <button className="submit-button" type="submit">
             Submit
           </button>
