@@ -27,19 +27,19 @@ const Modal = ({ onClose }) => {
     }
 
     if (!email.includes('@')) {
-      alert('Invalid email. Please check your email address.');
+      alert('Invalid email');
       return;
     }
 
     if (!/^\d{10}$/.test(phone)) {
-      alert('Invalid phone number. Please enter a 10-digit phone number.');
+      alert('Invalid phone number');
       return;
     }
 
     const selectedDate = new Date(dob);
     const currentDate = new Date();
     if (selectedDate > currentDate) {
-      alert('Invalid date of birth. Please enter a valid date.');
+      alert('Invalid date of birth');
       return;
     }
 
