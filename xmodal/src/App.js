@@ -1,29 +1,18 @@
-import { useState } from "react";
-import Modal from "./Component/Modal";
+import React, { useState } from 'react';
+import XModal from './components/XModal';
 
-function App() {
+const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalOpenBackground, setModalOpenBackground] = useState(false);
 
-  const handleClick = () => {
-    setIsModalOpen(true);
-    setModalOpenBackground(true);
-  };
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="modalBackground">
-      <h1 >User Details Modal</h1>
-      <button onClick={handleClick} className="modalTrigger">
-        Open Form
-      </button>
-      {isModalOpen && (
-        <Modal
-          setIsModalOpen={setIsModalOpen}
-          setModalOpenBackground={setModalOpenBackground}
-        />
-      )}
+    <div className="app">
+      <button onClick={openModal}>Open Form</button>
+      {isModalOpen && <XModal onClose={closeModal} />}
     </div>
   );
-}
+};
 
 export default App;
