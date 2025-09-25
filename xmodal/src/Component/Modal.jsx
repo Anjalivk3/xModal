@@ -29,7 +29,7 @@ const Modal = ({ setIsModalOpen, setModalOpenBackground }) => {
   const validationCheck = () => {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       window.alert(
-        "Invalid email. Your email address should be in the format:- text@text.com"
+        "Invalid email. Please check your email address."
       );
       return;
     }
@@ -68,6 +68,7 @@ const Modal = ({ setIsModalOpen, setModalOpenBackground }) => {
               <h3>Username:</h3>
             </label>
             <input
+              id="username"
               type="text"
               name="username"
               value={formData.username}
@@ -79,6 +80,7 @@ const Modal = ({ setIsModalOpen, setModalOpenBackground }) => {
               <h3>Email Address:</h3>
             </label>
             <input
+            id="email"
               type="text"
               name="email"
               value={formData.email}
@@ -90,6 +92,7 @@ const Modal = ({ setIsModalOpen, setModalOpenBackground }) => {
               <h3>Phone Number:</h3>
             </label>
             <input
+              id="phone"
               type="text"
               name="phone"
               value={formData.phone}
@@ -101,6 +104,7 @@ const Modal = ({ setIsModalOpen, setModalOpenBackground }) => {
               <h3>Date of Birth:</h3>
             </label>
             <input
+              id="dob"
               type="Date"
               name="dob"
               value={formData.dob}
@@ -109,7 +113,7 @@ const Modal = ({ setIsModalOpen, setModalOpenBackground }) => {
             />
             <br />
 
-            <button type="submit" className="submit">
+            <button type="submit" className="submit-button">
               Submit
             </button>
           </form>
