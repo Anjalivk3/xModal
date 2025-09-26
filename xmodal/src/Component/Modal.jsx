@@ -24,7 +24,7 @@ const Modal = ({ onClose }) => {
         if (email && !email.includes('@')) {
       alert('Invalid email');
       return;
-    }else{
+    }else if(!email){
       alert('Please fill out all fields.');
       return;
     }
@@ -32,7 +32,7 @@ const Modal = ({ onClose }) => {
     if (phone && !/^\d{10}$/.test(phone)) {
       alert('Invalid phone number');
       return;
-    }else{
+    }else if(!phone){
       alert('Please fill out all fields.');
       return;
     }
@@ -42,7 +42,7 @@ const Modal = ({ onClose }) => {
     if (dob && selectedDate > currentDate) {
       alert('Invalid date of birth');
       return;
-    }else{
+    }else if(!dob){
       alert('Please fill out all fields.');
       return;
     }
